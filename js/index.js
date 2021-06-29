@@ -74,7 +74,6 @@ function getRandomCharacter(sName){
       .then 
     }
     
-
 //Every Time this is called it picks a hero and removes it from the pool to ensure that you can't get the same hero twice. Call this every time you want a random hero from the popular hero pool
 function randomPool(){
         let randomHero = Math.floor(Math.random()*popularHeros.length);
