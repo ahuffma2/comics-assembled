@@ -28,11 +28,17 @@ fetch("https://gateway.marvel.com:443/v1/public/characters?name=" + sName + "&ap
     
     heroObject.Name = hero.name;
     heroObject.Description = hero.description;
-    heroObject.Thumbnail = hero.thumbnail.path;
+    heroObject.Thumbnail = hero.thumbnail.path + '.jpg'; 
     //NEEDS TO BE COMPLETED  
     //heroObject.Comics = hero.comics (Fetch list of comics here)
+    var hero_pic = document.createElement('img'); 
+    console.log("thumbnail path: ", heroObject.Thumbnail); 
+    hero_pic.src = heroObject.Thumbnail; 
+    document.querySelector('.heroPic').appendChild(hero_pic);
+
   })
   .then 
 
 }
   console.log(heroObject);
+  getCharacter('hulk'); 
