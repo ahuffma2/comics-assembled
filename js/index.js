@@ -36,7 +36,6 @@ fetch("https://gateway.marvel.com:443/v1/public/characters?name=" + sName + "&ap
   });
 }
 
-
 //Adds it to a hero array to send to random cards on HTML
 function getRandomCharacter(sName){
     fetch("https://gateway.marvel.com:443/v1/public/characters?name=" + sName + "&apikey=" + marApiKey, {
@@ -55,9 +54,7 @@ function getRandomCharacter(sName){
             Comics: "",
             Thumbnail: ""
         }
-
-        var hero = data.data.results[0];
-    
+      var hero = data.data.results[0];  
         //Defines heroObject with attributes from API
         console.log("The Data is Reading: " + hero);
         heroObject.Name = hero.name;
