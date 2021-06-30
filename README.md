@@ -1,4 +1,14 @@
+<<<<<<< HEAD
+=======
 # Comics Assembled
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 9e851b732ff96068b5de02a763d2dd99204c634b
+git 
+=======
+<b> Main Page </b>
+>>>>>>> abf0818e82344cbc5708cd894e733ab1eb938363
+=======
   Comic's Assembled is a website that allows users to search for their favorite comics they love, or to jump into comics if they've never read any before with the latest events and movies with links on where to find them 
   
 //SCREENSHOT HERE
@@ -18,3 +28,4 @@
 * [Nick Perez](LinkHere.com)
 * [Clarisse Bonang](LinkHere.com)
 * [Austin Huffman](https://www.linkedin.com/in/ahuffma2/)
+>>>>>>> 5b4b9a565f829732a68df03b86a3b2ee22bfb23c
