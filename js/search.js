@@ -15,6 +15,12 @@ var buy = document.querySelector('.buyLink');
 // cdebe113bbfe36271d37ef729d7ada15fd5cb3f6
 
 searchBtn.addEventListener('click',function(){
+    if(document.querySelector('.searchDiv')){
+        var listItemCont = document.querySelectorAll('.searchDiv')
+        for(var l = 0; l < listItemCont.length; l++){
+            listItemCont[l].remove();
+        }
+    }
     console.log(searchBar.value)
 fetch(`https://gateway.marvel.com:443/v1/public/comics?limit=10&title=${searchBar.value}&apikey=${marApiKey}`, {
     method: 'GET',
@@ -39,6 +45,7 @@ var showResults = function (data) {
         var listItemTitle = document.createElement("h2");
         var listItemImg = document.createElement("img");
         listItemCont.setAttribute('class', 'searchDiv');
+        listItemCont.style.display = 'flex';
         listItemTitle.textContent = data.data.results[i].title;
         listItemImg.setAttribute('src', data.data.results[i].images[0].path + "/portrait_medium." + data.data.results[i].images[0].extension);
         listItemImg.setAttribute('class', 'search-img');
