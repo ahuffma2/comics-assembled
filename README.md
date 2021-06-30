@@ -14,7 +14,7 @@
 --To Be filled-- 
 
 ## Authors
-[Razi Alawamleh](LinkHere.com)
-[Nick Perez](LinkHere.com)
-[Clarisse Bonang](LinkHere.com)
-[Austin Huffman](https://www.linkedin.com/in/ahuffma2/)
+* [Razi Alawamleh](LinkHere.com)
+* [Nick Perez](LinkHere.com)
+* [Clarisse Bonang](LinkHere.com)
+* [Austin Huffman](https://www.linkedin.com/in/ahuffma2/)
