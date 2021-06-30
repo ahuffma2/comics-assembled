@@ -23,7 +23,61 @@ let randHeroArray = [];
 
 let searchName = "spider-man";
 
+/* getCharacter:: 
+     sName: type string that holds the character name 
+     purpose: stores each character as an object with the following properties: 
+              name: stores the character name 
+              description: stores the character description 
+              comics: stores all the comcis 
+              thumbnail: store the link to the character's thumbnail
+*/ 
+function getCharacter(sName){
+  fetch("https://gateway.marvel.com:443/v1/public/characters?name=" + sName + "&apikey=" + marApiKey, {
+      method: 'GET',
+      credentials: 'same-origin',
+  })
+  .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      var hero = data.data.results[0];
+  
+      let heroObject = {
+          Name: "",
+          Description: "", 
+          Comics: "",
+          Thumbnail: ""
+      }
+      
+      console.log(hero);
+      heroObject.Name = hero.name;
+      heroObject.Description = hero.description;
+      heroObject.Thumbnail = hero.thumbnail.path;  
+      //NEEDS TO BE COMPLETED  
+      //heroObject.Comics = hero.comics (Fetch list of comics here)
+      //=====retrieving list of comics============================================
+        // Diag
+        console.log("GOT DATA"); 
+        getComicList(heroObject.CharacterId).then(response => console.log(response));
+        console.log("PUSHING DATA"); 
+        getComicList(heroObject.CharacterId).then(response => heroObject.Comics.push(response)); 
+    });
+  }
 
+
+
+
+
+
+/* getRandom Character:: 
+     sName: type string that holds the character name 
+     purpose: calls the randomPool() that generates a popular random character from the array, popularHeros 
+              stores each character as an object with the following properties: 
+              name: stores the character name 
+              description: stores the character description 
+              comics: stores all the comcis 
+              thumbnail: store the link to the character's thumbnail
+*/ 
 //Adds it to a hero array to send to random cards on HTML
 function getRandomCharacter(sName){
     fetch("https://gateway.marvel.com:443/v1/public/characters?name=" + sName + "&apikey=" + marApiKey, {
@@ -45,7 +99,7 @@ function getRandomCharacter(sName){
             Thumbnail: "", 
             CharacterId: ""
         }
-      var hero = data.data.results[0];  
+        var hero = data.data.results[0];  
         //Defines heroObject with attributes from API
         console.log("The Data is Reading: " + hero);
         heroObject.Name = hero.name;
@@ -65,7 +119,12 @@ function getRandomCharacter(sName){
         console.log("GOT DATA"); 
         getComicList(heroObject.CharacterId).then(response => console.log(response));
         console.log("PUSHING DATA"); 
-        getComicList(heroObject.CharacterId).then(response => heroObject.Comics.push(response)); 
+        getComicList(heroObject.CharacterId).then(response => heroObject.Comics = response); 
+        console.log("UPDATED HERO OBJECT"); 
+        console.log(heroObject.Comics); 
+        // clear out array 
+        console.log("CLEARING OUT ARRAY"); 
+        heroComicList = []; 
       })
       .then
     }
@@ -95,7 +154,7 @@ function getComicList(characterId){
   .then((data) => {
     var comic = data.data.results[0];  
       console.log("COMIC TITLE:", comic.title); 
-      
+      heroComicList = []; 
       // store at least 5 comics for each character to the global array, heroComicsList 
       for(var i = 0; i < 5; i++)
       {
