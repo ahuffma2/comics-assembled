@@ -7,20 +7,6 @@ var searchBtn = document.querySelector('.searchBtn');
 var searchResults = document.querySelector('.results');
 // cdebe113bbfe36271d37ef729d7ada15fd5cb3f6
 
-
-// fetch("https://gateway.marvel.com:443/v1/public/characters?apikey="+marApiKey, {
-//     method: 'GET',
-//     credentials: 'same-origin',
-// })
-// .then(function (response) {
-//     console.log(response);
-//     return response.json();
-//   })
-//   .then(function (data) {
-//     console.log(data);
-//   });
-// https://developer.marvel.com/docs#!/public/getComicIndividual_get_7
-
 searchBtn.addEventListener('click',function(){
     console.log(searchBar.value)
 fetch(`https://gateway.marvel.com:443/v1/public/comics?title=${searchBar.value}&apikey=${marApiKey}`, {
