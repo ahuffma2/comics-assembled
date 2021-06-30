@@ -16,7 +16,7 @@
 
 //===Clarisse (my) API key====// 
 // var marApiKey = "def8c77a7048a4bc502e4987b404b09f"; 
-var marApiKey = 'b1998316360fcd532aeea942fe2032d1';
+var marApiKey = '4e4e41b9d8095b837f4a41e002121e88';
 var googApiKey = "AIzaSyByKID-Pms4SKTlX4WF_XJG566FbLtAYfo"; 
 
 let popularHeros  = ["Spider-Man", "Hulk","Iron Man", "Wolverine", "Captain America", "Guardians of The Galaxy", "Deadpool"];
@@ -83,12 +83,6 @@ function getCharacter(sName){
     });
   }
 
-
-
-  
-
-
-
 /* getRandom Character:: 
      sName: type string that holds the character name 
      purpose: calls the randomPool() that generates a popular random character from the array, popularHeros 
@@ -143,7 +137,7 @@ function getRandomCharacter(sName){
         console.log("UPDATED HERO OBJECT"); 
         console.log(heroObject.Comics); 
       //====DISPLAY ON CARD======================================================
-        // TODO: call populate 
+
           populateRandomCards(heroObject, cardNum, heroObject.Name, heroObject.Thumbnail, heroObject.Description); 
 
       //=====clear out array=========== 
@@ -152,7 +146,6 @@ function getRandomCharacter(sName){
       //======cardNum increment========
         cardNum++; 
       })
-      .then
     }
     
 //Every Time this is called it picks a hero and removes it from the pool to ensure that you can't get the same hero twice. Call this every time you want a random hero from the popular hero pool
@@ -162,9 +155,9 @@ function randomPool(){
 }
 
 //TEMP: testing card rn
-getRandomCharacter(randomPool());
-getRandomCharacter(randomPool());
-getRandomCharacter(randomPool());
+// getRandomCharacter(randomPool());
+// getRandomCharacter(randomPool());
+// getRandomCharacter(randomPool());
 
 
 /*
@@ -214,36 +207,29 @@ function populateCard(name, imgLink, description)
   card_img.setAttribute('src', imgLink);
   // back of card: name, description
   card_description.textContent = description; 
+  cardHeight();
 }
 
-// calls to display card for an individual character 
-// TODO: uncomment and pass in an individual character name 
-//getCharacter('Spider-Man'); 
-
-
 /*
-   populateRandomCard():: 
-         description: populates the card with the character's information such as, 
-         name, description, comics, and an image of the random character 
-         parameters: heroObject, assignToCardNum
-              heroObject: holds the object and properties of the current hero 
-              assignToCardNum: keeps track of the the random character generated out of the 5 
-                               by doing so, the character can me assigned to a the correct card# 
+  description: populates the card with the character's information such as, 
+  name, description, comics, and an image of the random character 
+  parameters: heroObject, assignToCardNum
+  heroObject: holds the object and properties of the current hero 
+  assignToCardNum: keeps track of the the random character generated out of the 5 
+  by doing so, the character can me assigned to a the correct card# 
 */ 
-function populateRandomCards(heroObject, assignToCardNum, name, imgLink, description)
+function populateRandomCards(heroObject, cardNum, name, imgLink, description)
 {
     console.log("POPULATE RANDOM CARDS "); 
     console.log("NAME: ", heroObject.name); 
-    console.log("CARD NUM: ", assignToCardNum); 
+    console.log("CARD NUM: ", cardNum); 
     
-    if(assignToCardNum == 1)
-    {
       var heroName = name; 
       var heroImg = imgLink; 
-      var card_title = document.getElementById('title1_Front'); 
-      var card_img = document.getElementById('card1_ImgFront');
-      var card_description = document.getElementById('description1'); 
-      var cardBack_title = document.getElementById('title1_Back'); 
+      var card_title = document.getElementById('title'+cardNum+'_Front'); 
+      var card_img = document.getElementById('card'+ cardNum +'_ImgFront');
+      var card_description = document.getElementById('description'+cardNum); 
+      var cardBack_title = document.getElementById('title'+cardNum+'_Back'); 
       // front of card: name, img
       card_title.textContent = heroName; 
        // back
@@ -252,45 +238,19 @@ function populateRandomCards(heroObject, assignToCardNum, name, imgLink, descrip
       card_img.setAttribute('src', imgLink);
       // back of card: name, description
       card_description.textContent = description; 
-    }
-
-     else if(assignToCardNum == 2)
-     {
-      var heroName = name; 
-      var heroImg = imgLink; 
-      var card_title = document.getElementById('title2_Front'); 
-      var card_img = document.getElementById('card2_ImgFront');
-      var card_description = document.getElementById('description2'); 
-      var cardBack_title = document.getElementById('title2_Back'); 
-      // front of card: name, img
-      card_title.textContent = heroName; 
-      // back
-      cardBack_title.textContent = heroName; 
-      console.log('NAME: ',heroName ); 
-      card_img.setAttribute('src', heroImg);
-      // back of card: name, description
-      card_description.textContent = description; 
-     }
-     else if(assignToCardNum == 3)
-     {
-        var heroName = name; 
-        var heroImg = imgLink; 
-        var card_title = document.getElementById('title3_Front'); 
-        var card_img = document.getElementById('card3_ImgFront');
-        var card_description = document.getElementById('description3'); 
-        var cardBack_title = document.getElementById('title3_Back'); 
-        // front of card: name, img
-        card_title.textContent = heroName;
-        // back
-        cardBack_title.textContent = heroName; 
-        console.log('NAME: ',heroName ); 
-        card_img.setAttribute('src', heroImg);
-        // back of card: name, description
-        card_description.textContent = description; 
-     }
-
+      cardHeight();
 }
 
+function cardFix(){
+    let cardImages = $('.card-img-top');
 
-
-
+    if(cardImages.Height() > cardImages.width()){
+      cardImages.Height() = '100%';
+      cardImages.Width() = 'auto';
+    }
+}
+//FOR FIXING IMAGES
+// ///    if(img.height > img.width) {
+//   img.height = '100%';
+//   img.width = 'auto';
+// }
