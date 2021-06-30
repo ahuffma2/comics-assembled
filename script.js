@@ -5,6 +5,10 @@ var searchCont = document.querySelector('.search-cont');
 var searchBar = document.querySelector('#searchBar');
 var searchBtn = document.querySelector('.searchBtn');
 var searchResults = document.querySelector('.results');
+var resultImg = document.querySelector('#expandImg');
+var resultTitle = document.querySelector('.title');
+var resultStory = document.querySelector('.story');
+
 // cdebe113bbfe36271d37ef729d7ada15fd5cb3f6
 
 searchBtn.addEventListener('click',function(){
@@ -26,6 +30,7 @@ fetch(`https://gateway.marvel.com:443/v1/public/comics?title=${searchBar.value}&
         }
     })
 var showResults = function (data) {
+        localStorage.setItem('data',JSON.stringify(data))
     for (var i = 0; i < data.data.results.length; i++) {
         var listItemCont = document.createElement("div");
         var listItemTitle = document.createElement("h2");
@@ -34,7 +39,9 @@ var showResults = function (data) {
         listItemTitle.textContent = data.data.results[i].title;
         listItemImg.setAttribute('src', data.data.results[i].images[0].path + "/portrait_medium." + data.data.results[i].images[0].extension);
         listItemImg.setAttribute('class', 'search-img')
+        listItemImg.setAttribute('id',i);
         listItemTitle.setAttribute('class', 'search-title')
+        listItemTitle.setAttribute('id',i);
         searchResults.appendChild(listItemCont);
         listItemCont.appendChild(listItemImg);
         listItemCont.appendChild(listItemTitle);
@@ -44,23 +51,29 @@ var showResults = function (data) {
 
 searchResults.addEventListener('click', function(event){
     console.log(event.target)
-fetch("https://www.googleapis.com/books/v1/volumes?q="+wouldBeSearch+"&key=AIzaSyByKID-Pms4SKTlX4WF_XJG566FbLtAYfo")
-.then(function(response){
-    console.log(response)
-    return response.json();
-}).then(function(data){
-    console.log(data);
-    if(data){
-    for(var i = 0; i = data.items.length; i++){
-        var googResultCont = document.createElement('div');
-        var googResultsImg = document.createElement('img');
-        var googResultAvail = document.createElement('div');
-        var googQuote = document.createElement('p');
-        var googBuy = document.querySelector('a');
-        googResultsImg.setAttribute('src',data.items[0].volumeInfo.imageLinks.thumbnail)
-        // event.target.appendChild(googResultCont);
-        googResultCont.appendChild(googResultsImg);
-    }
-    }
+    console.log(event.target.id)
+    var i = event.target.id
+    var data = JSON.parse(localStorage.getItem('data'));
+        resultImg.setAttribute('src', data.data.results[i].images[0].path + "/portrait_xlarge." + data.data.results[i].images[0].extension);
+        resultTitle.textContent = data.data.results[i].title;
+    // }
+// fetch("https://www.googleapis.com/books/v1/volumes?q="+wouldBeSearch+"&key=AIzaSyByKID-Pms4SKTlX4WF_XJG566FbLtAYfo")
+// .then(function(response){
+//     console.log(response)
+//     return response.json();
+// }).then(function(data){
+//     console.log(data);
+//     if(data){
+//     for(var i = 0; i = data.items.length; i++){
+//         var googResultCont = document.createElement('div');
+//         var googResultsImg = document.createElement('img');
+//         var googResultAvail = document.createElement('div');
+//         var googQuote = document.createElement('p');
+//         var googBuy = document.querySelector('a');
+//         googResultsImg.setAttribute('src',data.items[0].volumeInfo.imageLinks.thumbnail)
+//         // event.target.appendChild(googResultCont);
+//         googResultCont.appendChild(googResultsImg);
+//     }
+//     }
 })
-})
+// })

@@ -1,3 +1,7 @@
+.main {
+    display: flex;
+    flex-direction: row;
+}
 .search-cont {
   max-width: 30%;
   display: inline-flex;
@@ -35,8 +39,7 @@
 .expandResults {
   display: inline-flex;
   flex-direction: column;
-  align-content: center;
+  margin-top: 40px;
   align-items: center;
   min-width: 70%;
-  justify-content: center;
 }
