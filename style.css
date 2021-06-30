@@ -1,0 +1,99 @@
+  
+*{
+    box-sizing: border-box;
+    padding:inherit 20px;
+    margin: 20px;
+    /* background-color: black; */
+}
+
+.header {
+    padding: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    color: red;
+}
+
+/*=======Flip Card=======================================================================================*/
+/* Reference: https://www.w3schools.com/howto/howto_css_flip_box.asp */
+/* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+
+
+
+
+.flip-box {
+    background-color: transparent;
+    /* background-color: #D3AF37; */
+    width: 300px;
+    height: 200px;
+    /* No border, we don't want to show the outline */
+    /* border: 1px solid #f1f1f1; */
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+    
+  }
+  
+  /* Position the front and back side */
+  .flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side */
+  .flip-box-front {
+    /* background-color: #bbb; */
+    color: black;
+    
+  }
+  
+  /* Style the back side */
+  .flip-box-back {
+    /* background-color: dodgerblue; */
+    /* TODO: did temporarily for fun  */
+    /* color: black; */
+    transform: rotateY(180deg);
+    color: black; 
+  }
+
+
+  /*==========SETTING ROWS AND COLS============*/
+  /* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+    /* TODO: just put here temporarily for fun */
+    background-color: #CC0000;
+  }
+  
+  /* Clear floats after image containers */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+
+  #grid-wrap
+{
+   display: grid;
+   /* 1 column, ensures mobile responsiveness. Able to adapt to smaller screens  */
+   /* 1st column will be a fraction of the entire page */
+   grid-template-columns: 2fr;
+}

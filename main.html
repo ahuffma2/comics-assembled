@@ -4,13 +4,14 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <!-- Reference to style sheet  -->
+    <link rel="stylesheet" type="text/css" href="./style.css" />
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- CryptoJS  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
-    
+
     <title>Comics Assemble</title>
   </head>
   <body>
@@ -34,6 +35,7 @@
         }
     </style>
 
+<!-------Carousel-------->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active" ></li>
@@ -64,9 +66,125 @@
             </carousel3>
         </div>
     </div>
+  <!-------End of Carousel-------->
 
-    <!--  Display Random Card -->
 
+  <!-------Display Random Card-------->
+
+
+<div class="row">
+    <!-- CARD 1 -->
+  <div class="column">
+    <div class="flip-box">
+      <div class="flip-box-inner">
+        <div class="flip-box-front">
+          <h2>Front Side</h2>
+          <!-- FRONT SIDE  -->
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" id= "card1_ImgFront" src = "http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title" id="title1_Front"></h5>
+              <!-- description will be used in the back -->
+              <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+          <!-- END OF FRONT SIDE CODE -->
+        </div>
+        <div class="flip-box-back">
+          <h2>Back Side</h2>
+          <!-- BACK SIDE  -->
+          <div class="card" style="width: 18rem;">
+            <!-- <img class="card-img-top" id= "card1_ImgBack" src = "http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b.jpg" alt="Card image cap"> -->
+            <div class="card-body">
+              <h5 class="card-title" id="title1_Back"></h5>
+              <p class="card-text" id="description1">description</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+            <!-- END OF BACK SIDE CODE -->
+        </div>
+      </div>
+    </div>
+    <!-- COLUMN DIV  -->
+  </div>
+    <!-- END CARD 1  -->
+    
+
+    <!-- CARD 2  -->
+  <div class="column">
+    <div class="flip-box">
+      <div class="flip-box-inner">
+        <div class="flip-box-front">
+          <h2>Front Side</h2> 
+          <!-- FRONT SIDE  -->
+          <div class="card" style="width: 18rem;"> 
+            <img class="card-img-top" id= "card2_ImgFront" src = "http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title" id="title2_Front"></h5>
+              <!-- description will be used in the back -->
+              <p class="card-text"></p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+          <!-- END OF FRONT SIDE CODE -->
+        </div>
+        <div class="flip-box-back">
+          <h2>Back Side</h2>
+          <!-- BACK SIDE  -->
+          <div class="card" style="width: 18rem;"> 
+            <!-- <img class="card-img-top" id= "card1_ImgBack" src = "http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b.jpg" alt="Card image cap"> -->
+            <div class="card-body"> 
+              <h5 class="card-title" id="title2_Back"></h5>
+              <p class="card-text" id="description2">description</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+            <!-- END OF BACK SIDE CODE -->
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- END CARD 2 -->
+
+    <!-- CARD 3 -->
+    <div class="column">
+      <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <h2>Front Side</h2> -->
+            <!-- FRONT SIDE  -->
+            <div class="card" style="width: 18rem;"> 
+              <img class="card-img-top" id= "card3_ImgFront" src = "http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title" id="title3_Front"></h5>
+                <!-- description will be used in the back -->
+                <p class="card-text"></p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+            <!-- END OF FRONT SIDE CODE -->
+          </div>
+          <div class="flip-box-back">
+            <h2>Back Side</h2>
+            <!-- BACK SIDE  -->
+            <div class="card" style="width: 18rem;"> 
+              <!-- <img class="card-img-top" id= "card1_ImgBack" src = "http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b.jpg" alt="Card image cap"> -->
+              <div class="card-body"> 
+                <h5 class="card-title" id="title3_Back"></h5>
+                <p class="card-text" id="description3">description</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+              <!-- END OF BACK SIDE CODE -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END OF CARD 3 -->
+<!-- END OF ROW  -->
+</div> 
+  <!---------End of CARDS----------->
 
     <!-- Optional JavaScript; choose one of the two! -->
 
