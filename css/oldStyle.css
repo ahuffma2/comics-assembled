@@ -1,0 +1,12 @@
+*{
+    box-sizing: border-box;
+    padding:inherit 20px;
+    margin: 20px;
+}
+
+.header {
+    padding: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    color: red;
+}
