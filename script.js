@@ -59,22 +59,13 @@ function getRandomCharacter(sName){
         console.log("The heroObject is currently: " + heroObject.Name);
         randHeroArray.push(heroObject); 
         console.log(randHeroArray);
-        // get the comic titles for each character 
-        // getComicInfo(heroObject.CharacterId); 
-        // // PUSH 5 comics associated with each character 
-        // for(var i = 0; i < heroComicList.length; i++)
-        // {
-        //   heroObject.Comics.push(heroComicList[i]); 
-        //   // Diag to see if it pushes to comic-book array 
-        //   console.log("LIST OF 5 COMICS: ", heroObject.Comics); 
-        // }
-        // // clear array before next call 
-        //  heroComicList = []; 
-         //=================================================
-         console.log("GOT DATA"); 
-         getComicList(heroObject.CharacterId).then(response => console.log(response));
-         console.log("PUSHING DATA"); 
-         getComicList(heroObject.CharacterId).then(response => heroObject.Comics.push(response)); 
+         
+      //=====retrieving list of comics============================================
+        // Diag
+        console.log("GOT DATA"); 
+        getComicList(heroObject.CharacterId).then(response => console.log(response));
+        console.log("PUSHING DATA"); 
+        getComicList(heroObject.CharacterId).then(response => heroObject.Comics.push(response)); 
       })
       .then
     }
@@ -89,45 +80,10 @@ getRandomCharacter(randomPool());
 getRandomCharacter(randomPool());
 getRandomCharacter(randomPool());
 
-// // Attempt 1 
-// function getComicInfo(characterId)
-// {
-//   var comicTitle = ""; 
-//   var comicUrl = "https://gateway.marvel.com:443/v1/public/characters/" + characterId + "/comics?apikey=" + marApiKey; 
-//     fetch(comicUrl, {
-//       method: 'GET',
-//       credentials: 'same-origin',
-//   })
-//   .then(function (response) {
-//       console.log("COMIC INFO RESPONSE"); 
-//       return response.json();
-//     })
-//     .then(function (data) {
-//       // TODO: ACCESS the following: results[0], results[1], results[2], results[3], results[4]
-//       var comic = data.data.results[0];  
-//       console.log("COMIC TITLE:", comic.title); 
-//       comicTitle = comic.title; 
-//       console.log("RETURN COMIC TITLE: ", comicTitle);
-//       return comicTitle;  
-//     })
-//     .then(function(comicList) 
-//     {
-//       // TODO: LOOP THROUGH ARRAY AND POPULATE WITH 5 COMICS 
-//        heroComicList.push(comicList); 
-//        for (var i = 0; i < heroComicList.length; i++)
-//        {
-//          console.log('heroComicList[' + i + ']' + ' = ' + heroComicList[i]); 
-//        }
-//        return heroComicList; 
-//     })
-    
-  
 
-// }
-
-
-// Attempt2
-
+/*getComicList:: stores 5 comics associated with each character into a global array and returns it 
+                 allows one to access data from a fetch by using return fetch 
+*/ 
 function getComicList(characterId){
   var comicUrl = "https://gateway.marvel.com:443/v1/public/characters/" + characterId + "/comics?apikey=" + marApiKey; 
   return fetch(comicUrl,
@@ -139,9 +95,13 @@ function getComicList(characterId){
   .then((data) => {
     var comic = data.data.results[0];  
       console.log("COMIC TITLE:", comic.title); 
-      comicTitle = comic.title; 
-      console.log("RETURN COMIC TITLE: ", comicTitle);
-      return comicTitle;  
+      
+      // store at least 5 comics for each character to the global array, heroComicsList 
+      for(var i = 0; i < 5; i++)
+      {
+        heroComicList[i] = data.data.results[i].title;  
+      }
+      return heroComicList;  
   })
   .catch(error => console.warn(error));
 }
