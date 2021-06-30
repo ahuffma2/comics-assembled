@@ -1,4 +1,4 @@
-var marApiKey = "4e4e41b9d8095b837f4a41e002121e88"
+var marApiKey = "3bcba8bc6d2f52a4b58f5f734276cccc";//"4e4e41b9d8095b837f4a41e002121e88"
 var googApiKey = "AIzaSyByKID-Pms4SKTlX4WF_XJG566FbLtAYfo"
 
 let popularHeros  = ["Spider-Man", "Hulk","Iron Man", "Wolverine", "Captain America", "Guardians of The Galaxy", "Deadpool"];
@@ -7,9 +7,11 @@ let popularHeros  = ["Spider-Man", "Hulk","Iron Man", "Wolverine", "Captain Amer
 //EX. $('.randomCard1').children('.name').text(randHeroArray[0].Name); where .name is a class with the name associated with it. 
 let randHeroArray = [];
 
+//this is a placeholder
 let searchName = "spider-man";
 
 function getCharacter(sName){
+  console.log("I fetched a character");
 fetch("https://gateway.marvel.com:443/v1/public/characters?name=" + sName + "&apikey=" + marApiKey, {
     method: 'GET',
     credentials: 'same-origin',
@@ -38,6 +40,7 @@ fetch("https://gateway.marvel.com:443/v1/public/characters?name=" + sName + "&ap
 
 //Adds it to a hero array to send to random cards on HTML
 function getRandomCharacter(sName){
+  console.log("I fetched a random character");
     fetch("https://gateway.marvel.com:443/v1/public/characters?name=" + sName + "&apikey=" + marApiKey, {
         method: 'GET',
         credentials: 'same-origin',
@@ -59,7 +62,7 @@ function getRandomCharacter(sName){
         console.log("The Data is Reading: " + hero);
         heroObject.Name = hero.name;
         heroObject.Description = hero.description;
-        heroObject.Thumbnail = hero.thumbnail.path; 
+        heroObject.Thumbnail = hero.thumbnail.path + 'jpg'; 
 
         //ADDs to heroArray
         console.log("The heroObject is currently: " + heroObject.Name);
@@ -67,17 +70,32 @@ function getRandomCharacter(sName){
         console.log(randHeroArray);
         //NEEDS TO BE COMPLETED  
         //heroObject.Comics = hero.comics (Fetch list of comics here)
-      })
-      .then 
-    }
+      });
+  }
     
 //Every Time this is called it picks a hero and removes it from the pool to ensure that you can't get the same hero twice. Call this every time you want a random hero from the popular hero pool
+//CALL THIS FOR AS MANY TIMES AS THERE IS HERO CARDS.
+
+
 function randomPool(){
         let randomHero = Math.floor(Math.random()*popularHeros.length);
         return popularHeros.splice(randomHero,1)[0];  
 }
 
-getRandomCharacter(randomPool());
-getRandomCharacter(randomPool());
-getRandomCharacter(randomPool());
+
+// fetch("https://gateway.marvel.com:443/v1/public/comics?title=" +"spider-man"+ "&apikey="+ marApiKey, {
+//   method: 'GET',
+//   credentials: 'same-origin',
+// })
+// .then(function (response) {
+//   return response.json();
+// })
+// .then(function (data) {
+//   console.log(data);
+// });
+
+
+// getRandomCharacter(randomPool());
+// getRandomCharacter(randomPool());
+// getRandomCharacter(randomPool());
 
