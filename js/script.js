@@ -16,7 +16,7 @@
 
 //===Clarisse (my) API key====// 
 // var marApiKey = "def8c77a7048a4bc502e4987b404b09f"; 
-var marApiKey = 'b1998316360fcd532aeea942fe2032d1';
+var marApiKey = '4e4e41b9d8095b837f4a41e002121e88';
 var googApiKey = "AIzaSyByKID-Pms4SKTlX4WF_XJG566FbLtAYfo"; 
 
 let popularHeros  = ["Spider-Man", "Hulk","Iron Man", "Wolverine", "Captain America", "Guardians of The Galaxy", "Deadpool"];
@@ -82,12 +82,6 @@ function getCharacter(sName){
         heroComicList = []; 
     });
   }
-
-
-
-  
-
-
 
 /* getRandom Character:: 
      sName: type string that holds the character name 
@@ -162,9 +156,9 @@ function randomPool(){
 }
 
 //TEMP: testing card rn
-getRandomCharacter(randomPool());
-getRandomCharacter(randomPool());
-getRandomCharacter(randomPool());
+// getRandomCharacter(randomPool());
+// getRandomCharacter(randomPool());
+// getRandomCharacter(randomPool());
 
 
 /*
@@ -216,9 +210,6 @@ function populateCard(name, imgLink, description)
   card_description.textContent = description; 
 }
 
-// calls to display card for an individual character 
-// TODO: uncomment and pass in an individual character name 
-//getCharacter('Spider-Man'); 
 
 
 /*
