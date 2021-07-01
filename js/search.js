@@ -62,11 +62,11 @@ savedSearchBtn.addEventListener('click',function(event){
     event.preventDefault();
     localStorage.setItem('saved-value',JSON.stringify(savedSearchBar.value));
     console.log('working')  ///  <========== NEED  ; ON LINE ENDINGS.   
-    document.location.replace('/search.html');
+    document.location.replace('/comics-assembled/search.html');                //CHANGED
 })
 saveHomeBtn.addEventListener('click', function(event){
     event.preventDefault()
-    document.location.pathname = '/index.html';
+    document.location.pathname = '/index.html';                              //CHANGE ME
 })
 }
 // getting value of search from saved page and putting it in search bar
@@ -195,22 +195,22 @@ savedBtn.addEventListener('click', function(){
             localStorage.setItem('savedArryIndex', JSON.stringify(arryOfIndex));
             console.log(JSON.parse(localStorage.getItem('savedArryTitles')));
             console.log(JSON.parse(localStorage.getItem('savedArryIndex')));
-    document.location.replace('/saved-pages.html');
+    document.location.replace('/comics-assembled/saved-pages.html');                                           //CHANGE ME!!!
 })
 homeBtnSp.addEventListener('click', function(){
-    document.location.replace('/index.html');
+    document.location.replace('/comics-assembled/index.html');
 })
 }
 
 //THIS FUNCTION SHOULD BE USED TO CALL ANY CODE THAT NEEDS TO BE CALLED WHEN PAGE IS LOADED
 //LOADED SEARCH IS A STRING THAT IS PASSED FROM HOME HTML. USE THIS STRING TO LOAD 
-if(document.location.pathname === '/index.html'){
+if(document.location.pathname === '/comics-assembled/index.html'){                                              //CHANGE ME
     console.log('working')
     savedSearchBtn.addEventListener('click', function(event){
         event.preventDefault();
     localStorage.setItem('saved-value',JSON.stringify(savedSearchBar.value));
     console.log('working')  ///  <========== NEED  ; ON LINE ENDINGS.   
-    document.location.replace('/search.html');
+    document.location.replace('/comics-assembled/search.html');                                                        ///CHANGED
     console.log(JSON.parse(localStorage.getItem('saved-value')))
     })
 }
