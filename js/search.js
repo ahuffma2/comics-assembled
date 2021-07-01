@@ -69,7 +69,8 @@ saveHomeBtn.addEventListener('click', function(event){
 })
 }
 // getting value of search from saved page and putting it in search bar
-if(document.location.pathname === "/search.html" ){
+if(document.location.pathname === "search.html" ){     
+// if(document.location.pathname === "/search.html" ){     
     var savedValue = JSON.parse(localStorage.getItem('saved-value'))
     console.log(savedValue);
     if(savedValue){
