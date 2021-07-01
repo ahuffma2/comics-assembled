@@ -66,7 +66,7 @@ savedSearchBtn.addEventListener('click',function(event){
 })
 saveHomeBtn.addEventListener('click', function(event){
     event.preventDefault()
-    document.location.pathname = '/index.html';                              //CHANGE ME
+    document.location.pathname = '/comics-assembled/index.html';                              //CHANGE ME
 })
 }
 // getting value of search from saved page and putting it in search bar
