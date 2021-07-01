@@ -70,8 +70,8 @@ saveHomeBtn.addEventListener('click', function(event){
 })
 }
 // getting value of search from saved page and putting it in search bar
-if(document.location.pathname === "search.html" ){     
-  console.log('I am at the right pathname');
+if(document.location.pathname === "/comics-assembled/search.html" ){     
+  console.log('I am at the right path');
 // if(document.location.pathname === "/search.html" ){     
     var savedValue = JSON.parse(localStorage.getItem('saved-value'))
     console.log(savedValue);
