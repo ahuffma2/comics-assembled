@@ -182,9 +182,9 @@ function randomPool(){
  // TODO: diag 
  //localStorage.removeItem('store-character');
 //TODO: comment when not testing random card 
-//  getRandomCharacter(randomPool());
-//  getRandomCharacter(randomPool());
-//  getRandomCharacter(randomPool());
+ getRandomCharacter(randomPool());
+ getRandomCharacter(randomPool());
+ getRandomCharacter(randomPool());
 
 
 /*
