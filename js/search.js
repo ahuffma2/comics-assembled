@@ -1,7 +1,8 @@
 
 console.log('The Script is working');
 marApiKey = "edf46de39646d3311b0f8ba0c49690ac";
-googApiKey = "AIzaSyByKID-Pms4SKTlX4WF_XJG566FbLtAYfo";
+googApiKey = "AIzaSyByKID-Pms4SKTlX4WF_XJG566FbLtAYfo";'
+console.log(document.location.pathname);
 // from search
 var wouldBeSearch = 'black widow';
 var searchCont = document.querySelector('.search-cont');
@@ -70,6 +71,7 @@ saveHomeBtn.addEventListener('click', function(event){
 }
 // getting value of search from saved page and putting it in search bar
 if(document.location.pathname === "search.html" ){     
+  console.log('I am at the right pathname');
 // if(document.location.pathname === "/search.html" ){     
     var savedValue = JSON.parse(localStorage.getItem('saved-value'))
     console.log(savedValue);
