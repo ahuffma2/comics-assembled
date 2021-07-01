@@ -20,7 +20,7 @@
 
 //===Clarisse (my) API key====// 
 // var marApiKey = "def8c77a7048a4bc502e4987b404b09f"; 
-var marApiKey = 'def8c77a7048a4bc502e4987b404b09f';
+var marApiKey = '3bcba8bc6d2f52a4b58f5f734276cccc';
 var googApiKey = "AIzaSyByKID-Pms4SKTlX4WF_XJG566FbLtAYfo"; 
 
 let popularHeros  = ["Spider-Man", "Hulk","Iron Man", "Wolverine", "Captain America", "Guardians of The Galaxy"];
