@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+      <!-- Reference to style sheet 
+    <link rel="stylesheet" type="text/css" href="./css/character-style.css" /> --> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- CryptoJS  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+      <!-- Reference to style sheet  -->
+      <link rel="stylesheet" type="text/css" href="./css/character-style.css" />
+    <title>Character Information</title>
+  </head>
+  <body>
+      <!-- Nav bar -->
+    <nav class="navbar navbar-dark bg-warning">
+        <a class="navbar-brand bg-warning" href="https://ahuffma2.github.io/comics-assembled/">
+        <img src="/img/iron_man.svg" id="logo"width="100" height="100" class="d-inline-block align-top" alt="">
+        </a>
+        <div class="nav_links" id="logo_name"> 
+            <b> Comics Assembled </b>
+        </div>
+        <div class="nav_links"> 
+            <b> Search Comics</b>
+        </div>
+        <div class="nav_links"> 
+            <b> Saved Comics </b>
+        </div>
+        <div class="nav_links"> </div>
+        <div class="nav_links"> </div>
+        <div class="nav_links"> </div>
+    </nav>
+    <!-- Character Content -->
+    <div class="container">
+        <div class="row">
+          <div class="col">
+            <br>
+            <img class="character_pg" id="character_img"> </img>
+          </div>
+          <div class="col" style="color:white">
+            <br> 
+            <b><div class="character_pg" id="character_name"> </div></b>
+            <div class="character_pg" id="character_info"></div> 
+            <br> 
+            <h1 class="character_pg" id="comic_titles"> Noteworthy Comics</h1>
+            <div class="character_pg" id="character_comics"></div>
+            <ul class="list-group">
+               <b>
+                <li class="list-group-item" id="0_comics"></li>
+                <li class="list-group-item" id="1_comics"></li>
+                <li class="list-group-item" id="2_comics"></li>
+                <li class="list-group-item" id="3_comics"></li>
+                <li class="list-group-item" id="4_comics"></li>
+              </b>
+            </ul>
+          </div>
+        </div>
+    </div>
+
+    <!-- Reference the characterPage script  -->
+    <script src="js/characterPage.js"> </script> 
+  </body>
+</html>
