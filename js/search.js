@@ -56,11 +56,11 @@ savedSearchBtn.addEventListener('click',function(event){
     event.preventDefault();
     localStorage.setItem('saved-value',JSON.stringify(savedSearchBar.value));
     console.log('working')
-    document.location.replace('/index1.html');
+    document.location.replace('/search.html');
 })
 }
 // getting value of search from saved page and putting it in search bar
-if(document.location.pathname == "/index1.html" ){
+if(document.location.pathname == "/search.html" ){
     var savedValue = JSON.parse(localStorage.getItem('saved-value'))
     console.log(savedValue);
     if(savedValue){
