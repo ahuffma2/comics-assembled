@@ -11,7 +11,7 @@
   height:32rem;
   background-color: black;
   color: whitesmoke;
-  position: relative;
+  /* position: relative; */
   background-position: center;
   background-size: cover;
 }
