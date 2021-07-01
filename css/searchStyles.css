@@ -73,3 +73,7 @@ footer {
   background-color: red;
   transition: 0.5s;
 }
+a {
+  color: aqua;
+  padding-bottom: 10px;
+}
