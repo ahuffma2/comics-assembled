@@ -1,8 +1,8 @@
 
 console.log('The Script is working');
 marApiKey = "edf46de39646d3311b0f8ba0c49690ac";
-googApiKey = "AIzaSyByKID-Pms4SKTlX4WF_XJG566FbLtAYfo";'
-console.log(window.location.pathname);
+googApiKey = "AIzaSyByKID-Pms4SKTlX4WF_XJG566FbLtAYfo";
+console.log(window.location);
 // from search
 var wouldBeSearch = 'black widow';
 var searchCont = document.querySelector('.search-cont');
