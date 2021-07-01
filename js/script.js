@@ -182,9 +182,9 @@ function randomPool(){
  // TODO: diag 
  //localStorage.removeItem('store-character');
 //TODO: comment when not testing random card 
- getRandomCharacter(randomPool());
- getRandomCharacter(randomPool());
- getRandomCharacter(randomPool());
+//  getRandomCharacter(randomPool());
+//  getRandomCharacter(randomPool());
+//  getRandomCharacter(randomPool());
 
 
 /*
@@ -248,9 +248,9 @@ function populateCard(name, imgLink, description)
 */ 
 function populateRandomCards(heroObject, cardNum, name, imgLink, description)
 {
-    console.log("POPULATE RANDOM CARDS "); 
-    console.log("NAME: ", heroObject.name); 
-    console.log("CARD NUM: ", cardNum); 
+    // console.log("POPULATE RANDOM CARDS "); 
+    // console.log("NAME: ", heroObject.name); 
+    // console.log("CARD NUM: ", cardNum); 
     
       var heroName = name; 
       var heroImg = imgLink; 
@@ -290,3 +290,16 @@ function storeHero(name, description, imgLink, comics, characterId){
   console.log("Stored Character Info: ", store_character);
   localStorage.setItem('store-character', JSON.stringify(store_character));
 }
+
+
+//THIS FUNCTION GOES TO THE SEARCH PAGE AND SENDS WHATEVER SEARCH RESULT ALONG WITH IT
+let searchBtn = $('.my-sm-0');
+let searchReq = '';
+
+searchBtn.click(function (){
+  searchReq = $('.mr-sm-2').val();
+  localStorage.setItem('home-search',JSON.stringify(searchReq));
+  console.log('I STORED SOMETHING TO LOCAL STORAGE');
+  $(location).attr('href','search.html');
+});
+
