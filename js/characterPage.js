@@ -28,6 +28,9 @@ var currentHeroIndex = heroData.length - 1;
     heroThumnail.setAttribute('src', heroData[currentHeroIndex].heroImg);
     // name 
     heroTitle.textContent = heroData[currentHeroIndex].heroName; 
+
+    heroTitle.setAttribute('href', "https://en.wikipedia.org/wiki/" + heroTitle.textContent);
+
     // description 
     heroDescription.textContent = heroData[currentHeroIndex].heroInfo;
     // get values from comic list by parsing through the string and returning 
