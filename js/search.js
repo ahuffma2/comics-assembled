@@ -27,15 +27,15 @@ var cardImg = document.querySelectorAll('.img-fluid');
 var saveHomeBtn = document.querySelector('.save-home-btn');
 // from saved-pages
                                                                
-if(document.location.pathname === "/saved-pages.html"){
-    var savedTitles = JSON.parse(localStorage.getItem('savedArryTitles'))         ///  <========== NEED  ; ON LINE ENDINGS.   
-    var savedIndex = JSON.parse(localStorage.getItem('savedArryIndex')) ///  <========== NEED  ; ON LINE ENDINGS.   
+if(document.location.pathname === "/comics-assembled/saved-pages.html"){  //previously saved-pages
+    var savedTitles = JSON.parse(localStorage.getItem('savedArryTitles'));        ///  <========== NEED  ; ON LINE ENDINGS.   
+    var savedIndex = JSON.parse(localStorage.getItem('savedArryIndex')); ///  <========== NEED  ; ON LINE ENDINGS.   
         console.log(savedTitles);
-        console.log(savedIndex)
+        console.log(savedIndex);
         for(var o = 0; o < savedTitles.length; o++){
             cardMain[o].style.display = 'flex';
-            cardTxt[o].textContent = ''
-            cardLink[o].textContent = ''
+            cardTxt[o].textContent = '';
+            cardLink[o].textContent = '';
            var marData = JSON.parse(localStorage.getItem(`${savedTitles[o]}mar`));
            var googData = JSON.parse(localStorage.getItem(savedTitles[o]));
            console.log(marData);
