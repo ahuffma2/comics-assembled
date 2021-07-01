@@ -5,6 +5,7 @@ var wouldBeSearch = 'black widow';
 var searchCont = document.querySelector('.search-cont');
 var searchBar = document.querySelector('#searchBar');
 var searchBtnSp = document.querySelector('.searchBtn');
+var homeBtnSp = document.querySelector('.home-btn')
 var searchResults = document.querySelector('.results');
 var resultImg = document.querySelector('#expandImg');
 var resultTitle = document.querySelector('.title');
@@ -20,6 +21,7 @@ var cardTitle = document.querySelectorAll('.card-title');
 var cardTxt = document.querySelectorAll('.card-text1');
 var cardLink = document.querySelectorAll('.google-Link');
 var cardImg = document.querySelectorAll('.img-fluid');
+var saveHomeBtn = document.querySelector('.save-home-btn');
 // from saved-pages
                                                                
 if(document.location.pathname === "/saved-pages.html"){
@@ -58,6 +60,10 @@ savedSearchBtn.addEventListener('click',function(event){
     localStorage.setItem('saved-value',JSON.stringify(savedSearchBar.value));
     console.log('working')  ///  <========== NEED  ; ON LINE ENDINGS.   
     document.location.replace('/search.html');
+})
+saveHomeBtn.addEventListener('click', function(event){
+    event.preventDefault()
+    document.location.pathname = '/index.html';
 })
 }
 // getting value of search from saved page and putting it in search bar
@@ -185,6 +191,9 @@ savedBtn.addEventListener('click', function(){
             console.log(JSON.parse(localStorage.getItem('savedArryTitles')));
             console.log(JSON.parse(localStorage.getItem('savedArryIndex')));
     document.location.replace('/saved-pages.html');
+})
+homeBtnSp.addEventListener('click', function(){
+    document.location.replace('/index.html');
 })
 }
 
