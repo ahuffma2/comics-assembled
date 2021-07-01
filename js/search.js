@@ -43,13 +43,16 @@ savedSearchBtn.addEventListener('click',function(event){
     document.location.replace('/index1.html');
 })
 }
+// getting value of search from saved page and putting it in search bar
 if(document.location.pathname == "/index1.html" ){
     var savedValue = JSON.parse(localStorage.getItem('saved-value'))
     console.log(savedValue);
     if(savedValue){
         searchBar.value = savedValue
     }
+    // event listener for search button
 searchBtn.addEventListener('click',function(){
+    // removing old search results
     if(document.querySelector('.searchDiv')){
         var listItemCont = document.querySelectorAll('.searchDiv')
         for(var l = 0; l < listItemCont.length; l++){
@@ -57,6 +60,7 @@ searchBtn.addEventListener('click',function(){
         }
     }
     console.log(searchBar.value)
+    // calling api with text from search bar
 fetch(`https://gateway.marvel.com:443/v1/public/comics?limit=10&title=${searchBar.value}&apikey=${marApiKey}`, {
     method: 'GET',
     credentials: 'same-origin',
@@ -73,6 +77,7 @@ fetch(`https://gateway.marvel.com:443/v1/public/comics?limit=10&title=${searchBa
             showResults(data);
         }
     })
+    // appending search results
 var showResults = function (data) {
         localStorage.setItem('data',JSON.stringify(data))
     for (var i = 0; i < data.data.results.length; i++) {
@@ -93,7 +98,7 @@ var showResults = function (data) {
     }
 }
 })
-
+// listener for expanding search results
 searchResults.addEventListener('click', function(event){
     savedBtn.style.display = 'block';
     var amount = 0
@@ -112,18 +117,6 @@ searchResults.addEventListener('click', function(event){
         resultImg.setAttribute('src', data.data.results[i].images[0].path + "/portrait_xlarge." + data.data.results[i].images[0].extension);
         resultTitle.textContent = data.data.results[i].title;
         localStorage.setItem(`${resultTitle.textContent}mar`, JSON.stringify(data))
-        // var arryOfTitles = []
-        // var savedArryTitles = JSON.parse(localStorage.getItem('savedArryTitles'));
-        // if(savedArryTitles){
-        //     for(var m = 0; m > savedArryTitles.length; m++){
-        //         arryOfTitles.push(savedArryTitles[m]);
-        //     }
-        //     arryOfTitles.push(resultTitle.textContent);
-        //     localStorage.setItem('savedArryTitles', JSON.stringify(arryOfTitles));
-        // }else if(!savedArryTitles){
-        //     arryOfTitles.push(resultTitle.textContent)
-        //     localStorage.setItem('savedArryTitles', JSON.stringify(arryOfTitles));
-        // }
         for(var j = 0; j < data.data.results[i].creators.items.length; j++){
             var newLi = document.createElement('li')
             newLi.setAttribute('id','oldLi')
@@ -147,22 +140,26 @@ fetch("https://www.googleapis.com/books/v1/volumes?q="+resultTitle.textContent+"
     }
 })
 })
+// listener for save button
 savedBtn.addEventListener('click', function(){
     var arryOfTitles = []
+    // attempting to push previous search values into new array and placing back in local storage
+    // instead overrides local storage arry every time
         var savedArryTitles = JSON.parse(localStorage.getItem('savedArryTitles'));
-        if(savedArryTitles){
+        if(savedArryTitles == []){
+            arryOfTitles.push(resultTitle.textContent)
+            localStorage.setItem('savedArryTitles', JSON.stringify(arryOfTitles));
+        }
+        else{
             for(var m = 0; m > savedArryTitles.length; m++){
                 arryOfTitles.push(savedArryTitles[m]);
             }
             arryOfTitles.push(resultTitle.textContent);
             localStorage.setItem('savedArryTitles', JSON.stringify(arryOfTitles));
-        }else if(!savedArryTitles){
-            arryOfTitles.push(resultTitle.textContent)
-            localStorage.setItem('savedArryTitles', JSON.stringify(arryOfTitles));
         }
     document.location.replace('/saved-pages.html');
     if (document.location.pathname = '/saved-pages.html'){
-        var savedArryTitles = JSON.parse(localStorage.getItem('savedArryTitles'))
+        var savedArryTitles = JSON.parse(localStorage.getItem('savedArryTitles'));
         console.log(savedArryTitles);
         
     }
