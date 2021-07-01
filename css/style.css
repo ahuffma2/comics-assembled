@@ -104,3 +104,17 @@
    grid-template-columns: 2fr;
 }
 
+/* style buttons on each card */
+#btn-1, #btn-2, #btn-3
+{
+  border-radius: 3vw 3vw; 
+  background-color: #CC0000;
+  color: white; 
+  height: 2vw;
+  width: 5vw;
+}
+
+/* center any text */
+#center {
+  padding-left: 2vw;
+}
