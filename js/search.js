@@ -19,18 +19,23 @@ var cardMain = document.querySelectorAll('.card');
 var cardTitle = document.querySelectorAll('.card-title');
 var cardTxt = document.querySelectorAll('.card-text');
 var cardLink = document.querySelectorAll('.google-link');
+var cardImg = document.querySelectorAll('.img-fluid');
 // from saved-pages
 if(document.location.pathname == "/saved-pages.html"){
     var savedTitles = JSON.parse(localStorage.getItem('savedArryTitles'))
+    var savedIndex = JSON.parse(localStorage.getItem('savedArryIndex'))
         console.log(savedTitles);
+        console.log(savedIndex)
         for(var o = 0; o < savedTitles.length; o++){
            var marData = JSON.parse(localStorage.getItem(`${savedTitles[o]}mar`));
            var googData = JSON.parse(localStorage.getItem(savedTitles[o]));
            console.log(marData);
            console.log(googData);
-           cardTitle[o].textContent = marData.data.results[o].title
-            
+           cardTitle[o].textContent = marData.data.results[savedIndex[o]].title
+        //    cardImg.getAttribute('src')
+        // cardImg.setAttribute('src', `${marData.data.results[savedIndex[o]].images[0].path}/portrait_medium.${marData.data.results[savedIndex[o]].images[0].extension}`)
         }
+        console.log(savedTitles)
 // var savedSearchBar = document.querySelector('.form-control')
 // var savedSearchBtn = document.querySelector('.btn')
 
@@ -99,7 +104,7 @@ var showResults = function (data) {
 }
 })
 // listener for expanding search results
-searchResults.addEventListener('click', function(event){
+i = searchResults.addEventListener('click', function(event){
     savedBtn.style.display = 'block';
     var amount = 0
     amount++
@@ -113,6 +118,7 @@ searchResults.addEventListener('click', function(event){
     console.log(event.target)
     console.log(event.target.id)
     var i = event.target.id
+     window.i = i
     var data = JSON.parse(localStorage.getItem('data'));
         resultImg.setAttribute('src', data.data.results[i].images[0].path + "/portrait_xlarge." + data.data.results[i].images[0].extension);
         resultTitle.textContent = data.data.results[i].title;
@@ -137,31 +143,32 @@ fetch("https://www.googleapis.com/books/v1/volumes?q="+resultTitle.textContent+"
         price.textContent = `price: $${data.items[0].saleInfo.retailPrice.amount}`;
         buy.textContent = `Buy Here: ${data.items[0].saleInfo.buyLink}`;
         // savedBtn.style.display = 'block';
+        console.log(i)
     }
+     
 })
 })
+
+console.log(JSON.parse(localStorage.getItem('savedArryTitles')))
 // listener for save button
 savedBtn.addEventListener('click', function(){
-    var arryOfTitles = []
-    // attempting to push previous search values into new array and placing back in local storage
-    // instead overrides local storage arry every time
-        var savedArryTitles = JSON.parse(localStorage.getItem('savedArryTitles'));
-        if(savedArryTitles == []){
-            arryOfTitles.push(resultTitle.textContent)
-            localStorage.setItem('savedArryTitles', JSON.stringify(arryOfTitles));
-        }
-        else{
-            for(var m = 0; m > savedArryTitles.length; m++){
+    console.log(i);
+    var arryOfIndex = [];
+    var arryOfTitles = [];
+        var savedArryTitles = JSON.parse(localStorage.getItem('savedArryTitles'))
+        var savedArryIndex = JSON.parse(localStorage.getItem('savedArryIndex'))
+         if(savedArryTitles != null){
+            for(var m = 0; m < savedArryTitles.length; m++){
                 arryOfTitles.push(savedArryTitles[m]);
+                arryOfIndex.push(savedArryIndex[m])
             }
+        }
+            arryOfIndex.push(i);
             arryOfTitles.push(resultTitle.textContent);
             localStorage.setItem('savedArryTitles', JSON.stringify(arryOfTitles));
-        }
+            localStorage.setItem('savedArryIndex', JSON.stringify(arryOfIndex));
+            console.log(JSON.parse(localStorage.getItem('savedArryTitles')));
+            console.log(JSON.parse(localStorage.getItem('savedArryIndex')));
     document.location.replace('/saved-pages.html');
-    if (document.location.pathname = '/saved-pages.html'){
-        var savedArryTitles = JSON.parse(localStorage.getItem('savedArryTitles'));
-        console.log(savedArryTitles);
-        
-    }
 })
 }
