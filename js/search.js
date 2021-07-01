@@ -1,6 +1,6 @@
 marApiKey = "edf46de39646d3311b0f8ba0c49690ac";
 googApiKey = "AIzaSyByKID-Pms4SKTlX4WF_XJG566FbLtAYfo";
-// from index1
+// from search
 var wouldBeSearch = 'black widow';
 var searchCont = document.querySelector('.search-cont');
 var searchBar = document.querySelector('#searchBar');
@@ -21,9 +21,11 @@ var cardTxt = document.querySelectorAll('.card-text');
 var cardLink = document.querySelectorAll('.google-link');
 var cardImg = document.querySelectorAll('.img-fluid');
 // from saved-pages
+
+                                                               
 if(document.location.pathname == "/saved-pages.html"){
-    var savedTitles = JSON.parse(localStorage.getItem('savedArryTitles'))
-    var savedIndex = JSON.parse(localStorage.getItem('savedArryIndex'))
+    var savedTitles = JSON.parse(localStorage.getItem('savedArryTitles'))         ///  <========== NEED  ; ON LINE ENDINGS.   
+    var savedIndex = JSON.parse(localStorage.getItem('savedArryIndex')) ///  <========== NEED  ; ON LINE ENDINGS.   
         console.log(savedTitles);
         console.log(savedIndex)
         for(var o = 0; o < savedTitles.length; o++){
@@ -31,7 +33,7 @@ if(document.location.pathname == "/saved-pages.html"){
            var googData = JSON.parse(localStorage.getItem(savedTitles[o]));
            console.log(marData);
            console.log(googData);
-           cardTitle[o].textContent = marData.data.results[savedIndex[o]].title
+           cardTitle[o].textContent = marData.data.results[savedIndex[o]].title  ///  <========== NEED  ; ON LINE ENDINGS.       
         //    cardImg.getAttribute('src')
         // cardImg.setAttribute('src', `${marData.data.results[savedIndex[o]].images[0].path}/portrait_medium.${marData.data.results[savedIndex[o]].images[0].extension}`)
         }
@@ -44,13 +46,13 @@ if(document.location.pathname == "/saved-pages.html"){
 savedSearchBtn.addEventListener('click',function(event){
     event.preventDefault();
     localStorage.setItem('saved-value',JSON.stringify(savedSearchBar.value));
-    console.log('working')
-    document.location.replace('/index1.html');
+    console.log('working')  ///  <========== NEED  ; ON LINE ENDINGS.   
+    document.location.replace('/search.html');
 })
 }
 // getting value of search from saved page and putting it in search bar
-if(document.location.pathname == "/index1.html" ){
-    var savedValue = JSON.parse(localStorage.getItem('saved-value'))
+if(document.location.pathname == "/search.html" ){
+    var savedValue = JSON.parse(localStorage.getItem('saved-value'));
     console.log(savedValue);
     if(savedValue){
         searchBar.value = savedValue
@@ -172,3 +174,12 @@ savedBtn.addEventListener('click', function(){
     document.location.replace('/saved-pages.html');
 })
 }
+
+//THIS FUNCTION SHOULD BE USED TO CALL ANY CODE THAT NEEDS TO BE CALLED WHEN PAGE IS LOADED
+//LOADED SEARCH IS A STRING THAT IS PASSED FROM HOME HTML. USE THIS STRING TO LOAD 
+function init(){
+var loadedSearch = JSON.parse(localStorage.getItem('home-search'));
+console.log(loadedSearch);
+}
+ init();
+
