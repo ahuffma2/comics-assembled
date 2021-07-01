@@ -205,7 +205,7 @@ if(document.location.pathname === '/index.html'){
         event.preventDefault();
     localStorage.setItem('saved-value',JSON.stringify(savedSearchBar.value));
     console.log('working')  ///  <========== NEED  ; ON LINE ENDINGS.   
-    // document.location.replace('/search.html');
+    document.location.replace('/search.html');
     console.log(JSON.parse(localStorage.getItem('saved-value')))
     })
 }
