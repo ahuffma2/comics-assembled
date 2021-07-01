@@ -3,27 +3,26 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
     <!-- CryptoJS  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
       <!-- Reference to style sheet  -->
-   
+  
+
     <title>Comics Assemble</title>
   </head>
-  
   <body>
 
 <!-------HeaderNavbar-------->  
     <header class="header">
       <nav class="navbar navbar-danger saved-header"  >
-        <a class="navbar-brand">COMICS ASSEMBLED</a>
+        <!-- <a class="navbar-brand">COMICS ASSEMBLED</a> -->
+        <!-- Logo -->
+        <img id="center"src="/img/main_title.png" >
         <form class="form-inline">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
+          <button class="btn btn-outline-danger my-2 my-sm-0" type="button">Search</button>
         </form>
       </nav>
     </header>
@@ -49,7 +48,21 @@
             <div class="container">
                 <p><h4>Coming July 9th. Stream Black Widow on Disney+<br> with Premier Access the same day
                 it’s in theaters.</h4></p>
+
             </div>
+            </carousel1>
+            <carousel2 class="carousel-item">
+            <div class="container">
+                <h1>slide title</h1>
+                <p>slide description batman wishes he was superman</p>
+            </div>
+            </carousel2>
+            <carousel3 class="carousel-item">
+            <div class="container">
+                <h1>slide title</h1>
+                <p>slide description batman is emo</p>
+            </div>
+            </carousel3>
         </div>
         <div class="carousel-item" data-bs-interval="8000">
           <div class="overlay-image" style="background-image: url(./img/carouselImage2.jpg);"></div>
@@ -88,7 +101,7 @@
     <div class="flip-box">
       <div class="flip-box-inner">
         <div class="flip-box-front">
-          <h2>Front Side</h2>
+          <h2>Hero</h2>
           <!-- FRONT SIDE  -->
           <div class="card" style="width: 18rem;">
             <img class="card-img-top" id= "card1_ImgFront" src = "http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b.jpg" alt="Card image cap">
@@ -96,20 +109,23 @@
               <h5 class="card-title" id="title1_Front"></h5>
               <!-- description will be used in the back -->
               <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <!-- UPDATE -->
+              <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
             </div>
           </div>
           <!-- END OF FRONT SIDE CODE -->
         </div>
         <div class="flip-box-back">
-          <h2>Back Side</h2>
+          <h2>Summary</h2>
           <!-- BACK SIDE  -->
           <div class="card" style="width: 18rem;">
             <!-- <img class="card-img-top" id= "card1_ImgBack" src = "http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b.jpg" alt="Card image cap"> -->
             <div class="card-body">
               <h5 class="card-title" id="title1_Back"></h5>
               <p class="card-text" id="description1">description</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <!-- UPDATE -->
+              <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+              <button id= "btn-1"> More </button>
             </div>
           </div>
             <!-- END OF BACK SIDE CODE -->
@@ -126,7 +142,7 @@
     <div class="flip-box">
       <div class="flip-box-inner">
         <div class="flip-box-front">
-          <h2>Front Side</h2> 
+          <h2>Hero</h2> 
           <!-- FRONT SIDE  -->
           <div class="card" style="width: 18rem;"> 
             <img class="card-img-top" id= "card2_ImgFront" src = "http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b.jpg" alt="Card image cap">
@@ -134,20 +150,22 @@
               <h5 class="card-title" id="title2_Front"></h5>
               <!-- description will be used in the back -->
               <p class="card-text"></p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
             </div>
           </div>
           <!-- END OF FRONT SIDE CODE -->
         </div>
         <div class="flip-box-back">
-          <h2>Back Side</h2>
+          <h2>Summary</h2>
           <!-- BACK SIDE  -->
           <div class="card" style="width: 18rem;"> 
             <!-- <img class="card-img-top" id= "card1_ImgBack" src = "http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b.jpg" alt="Card image cap"> -->
             <div class="card-body"> 
               <h5 class="card-title" id="title2_Back"></h5>
               <p class="card-text" id="description2">description</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <!-- UPDATE -->
+              <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+              <button id="btn-2"> More </button>
             </div>
           </div>
             <!-- END OF BACK SIDE CODE -->
@@ -162,7 +180,7 @@
       <div class="flip-box">
         <div class="flip-box-inner">
           <div class="flip-box-front">
-            <h2>Front Side</h2> 
+            <h2>Hero</h2> 
             <!-- FRONT SIDE  -->
             <div class="card" style="width: 18rem;"> 
               <img class="card-img-top" id= "card3_ImgFront" src = "http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b.jpg" alt="Card image cap">
@@ -170,20 +188,22 @@
                 <h5 class="card-title" id="title3_Front"></h5>
                 <!-- description will be used in the back -->
                 <p class="card-text"></p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
               </div>
             </div>
             <!-- END OF FRONT SIDE CODE -->
           </div>
           <div class="flip-box-back">
-            <h2>Back Side</h2>
+            <h2>Summary</h2>
             <!-- BACK SIDE  -->
             <div class="card" style="width: 18rem;"> 
               <!-- <img class="card-img-top" id= "card1_ImgBack" src = "http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b.jpg" alt="Card image cap"> -->
               <div class="card-body"> 
                 <h5 class="card-title" id="title3_Back"></h5>
                 <p class="card-text" id="description3">description</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <!-- UPDATE -->
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                <button id="btn-3"> More </button>
               </div>
             </div>
               <!-- END OF BACK SIDE CODE -->
@@ -203,10 +223,8 @@
 </footer>
 <!-- End of Footer -->
   
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    <script src="./js/search.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>

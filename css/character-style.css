@@ -1,0 +1,27 @@
+
+
+
+body
+{
+    /* background-color: black; */
+    background-color: black;
+}
+#logo
+{
+    width: 7vw; 
+    height: 7vw; 
+}
+#character_name, comics_title
+{
+    font-size:xx-large; 
+    color: white;
+}
+#character_img
+{
+    width: 100%;
+  height: auto;
+}
+
+
+
+
