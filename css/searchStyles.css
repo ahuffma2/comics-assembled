@@ -60,3 +60,16 @@ html {
 footer {
   color: aliceblue;
 }
+.saveBtn {
+  font-size: .8em;
+  color: aliceblue;
+  background-color: royalblue;
+  border-style: none;
+  border-radius: 30px;
+  padding: 10px;
+  display: none;
+}
+.saveBtn:hover {
+  background-color: red;
+  transition: .5s;
+}
