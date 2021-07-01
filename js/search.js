@@ -4,7 +4,7 @@ googApiKey = "AIzaSyByKID-Pms4SKTlX4WF_XJG566FbLtAYfo";
 var wouldBeSearch = 'black widow';
 var searchCont = document.querySelector('.search-cont');
 var searchBar = document.querySelector('#searchBar');
-var searchBtn = document.querySelector('.searchBtn');
+var searchBtnSp = document.querySelector('.searchBtn');
 var searchResults = document.querySelector('.results');
 var resultImg = document.querySelector('#expandImg');
 var resultTitle = document.querySelector('.title');
@@ -21,9 +21,8 @@ var cardTxt = document.querySelectorAll('.card-text1');
 var cardLink = document.querySelectorAll('.google-Link');
 var cardImg = document.querySelectorAll('.img-fluid');
 // from saved-pages
-
                                                                
-if(document.location.pathname == "/saved-pages.html"){
+if(document.location.pathname === "/saved-pages.html"){
     var savedTitles = JSON.parse(localStorage.getItem('savedArryTitles'))         ///  <========== NEED  ; ON LINE ENDINGS.   
     var savedIndex = JSON.parse(localStorage.getItem('savedArryIndex')) ///  <========== NEED  ; ON LINE ENDINGS.   
         console.log(savedTitles);
@@ -62,14 +61,14 @@ savedSearchBtn.addEventListener('click',function(event){
 })
 }
 // getting value of search from saved page and putting it in search bar
-if(document.location.pathname == "/search.html" ){
+if(document.location.pathname === "/search.html" ){
     var savedValue = JSON.parse(localStorage.getItem('saved-value'))
     console.log(savedValue);
     if(savedValue){
         searchBar.value = savedValue
     }
     // event listener for search button
-searchBtn.addEventListener('click',function(){
+searchBtnSp.addEventListener('click',function(){
     // removing old search results
     if(document.querySelector('.searchDiv')){
         var listItemCont = document.querySelectorAll('.searchDiv')
@@ -87,7 +86,6 @@ fetch(`https://gateway.marvel.com:443/v1/public/comics?limit=10&title=${searchBa
         return response.json();
     })
     .then(function (data) {
-        var hero = data.data.results[0];
 
         console.log(data);
         console.log(`${data.data.results[0].images[0].path}/portrait_medium.${data.data.results[0].images[0].extension}`)
@@ -116,6 +114,9 @@ var showResults = function (data) {
     }
 }
 })
+if(savedValue){
+    searchBtnSp.click()
+}
 // listener for expanding search results
 i = searchResults.addEventListener('click', function(event){
     savedBtn.style.display = 'block';
@@ -189,9 +190,15 @@ savedBtn.addEventListener('click', function(){
 
 //THIS FUNCTION SHOULD BE USED TO CALL ANY CODE THAT NEEDS TO BE CALLED WHEN PAGE IS LOADED
 //LOADED SEARCH IS A STRING THAT IS PASSED FROM HOME HTML. USE THIS STRING TO LOAD 
-function init(){
-var loadedSearch = JSON.parse(localStorage.getItem('home-search'));
-console.log(loadedSearch);
+if(document.location.pathname === '/index.html'){
+    console.log('working')
+    savedSearchBtn.addEventListener('click', function(event){
+        event.preventDefault();
+    localStorage.setItem('saved-value',JSON.stringify(savedSearchBar.value));
+    console.log('working')  ///  <========== NEED  ; ON LINE ENDINGS.   
+    // document.location.replace('/search.html');
+    console.log(JSON.parse(localStorage.getItem('saved-value')))
+    })
 }
- init();
+
 
