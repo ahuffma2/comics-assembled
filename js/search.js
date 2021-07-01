@@ -152,7 +152,8 @@ fetch("https://www.googleapis.com/books/v1/volumes?q="+resultTitle.textContent+"
     }else{
         isAvailable.textContent = "Available: Yes";
         price.textContent = `price: $${data.items[0].saleInfo.retailPrice.amount}`;
-        buy.textContent = `Buy Here: ${data.items[0].saleInfo.buyLink}`;
+        buy.textContent = 'Buy Here';
+        buy.setAttribute('href', data.items[0].saleInfo.buyLink)
         // savedBtn.style.display = 'block';
         console.log(i)
     }
