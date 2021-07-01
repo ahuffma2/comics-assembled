@@ -1,14 +1,16 @@
-:root{
-    --iron-red:rgb(204, 0, 34);
-    --iron-gold:rgb(252,194,0);
-    --iron-black:rgb(23,20,30);
-  }
-  
+:root {
+  --iron-red: rgb(204, 0, 34);
+  --iron-gold: rgb(252, 194, 0);
+  --iron-black: rgb(23, 20, 30);
+}
 
-  /* This is for the saved pages  */
-.saved-header{
-    background-color: var(--iron-black);
-    color: var(--iron-gold);
-    border-bottom:solid var(--iron-red);
-    margin:0px;
-  }
+/* This is for the saved pages  */
+.saved-header {
+  background-color: var(--iron-black);
+  color: var(--iron-gold);
+  border-bottom: solid var(--iron-red);
+  margin: 0px;
+}
+.card {
+  display: none;
+}
