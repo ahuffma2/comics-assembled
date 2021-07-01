@@ -1,16 +1,26 @@
-*{
-    box-sizing: border-box;
-    padding:inherit 20px;
-    margin: 20px;
-    /* background-color: black; */
+.header {
+  padding: auto;
+  background-color: black;
+  color: white;
 }
 
-.header {
-    padding: 30px;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: black;
-    color: red;
+/*=======Carousel========================================================================================*/
+.carousel-item {
+  height:32rem;
+  background-color: black;
+  color: whitesmoke;
+  position: relative;
 }
+.container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: 50px;
+  color: white;
+}
+
+
 
 /*=======Flip Card=======================================================================================*/
 /* Reference: https://www.w3schools.com/howto/howto_css_flip_box.asp */
