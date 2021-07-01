@@ -1,3 +1,5 @@
+
+console.log('The Script is working');
 marApiKey = "edf46de39646d3311b0f8ba0c49690ac";
 googApiKey = "AIzaSyByKID-Pms4SKTlX4WF_XJG566FbLtAYfo";
 // from search
