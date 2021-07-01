@@ -14,3 +14,17 @@
 .card {
   display: none;
 }
+.save-home-btn {
+  margin-right: 20px;
+  font-size: 1em;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 700;
+  color: gold;
+  background-color: black;
+}
+.save-home-btn:hover {
+  background-color: gold;
+  color: black;
+  transition: .5s;
+}
