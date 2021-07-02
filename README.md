@@ -17,7 +17,7 @@
 
 ## Presentation 
 
-![Google Docs Link] (https://docs.google.com/presentation/d/1nCAJ6QO4Tp-6DutocUiyKWgete62Mz6UfvavuddtLmg/edit?usp=sharing)
+![Google Docs Link](https://docs.google.com/presentation/d/1nCAJ6QO4Tp-6DutocUiyKWgete62Mz6UfvavuddtLmg/edit?usp=sharing)
 
 ## Authors
 * [Austin Huffman](https://www.linkedin.com/in/ahuffma2/)
