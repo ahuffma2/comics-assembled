@@ -10,7 +10,9 @@
 * The user can access the search menu to search whichever comics they are looking for by title. 
 * The search results populate from Marvel's api and will allow users to save those comics to a storage, where they can return to if they would like to curate a list of comics to aquire.
 * The saved page will display all of these comics picked by the user. 
-* The user will be able to see live data with where they can aquire these comics. 
+* The user will be able to see live data with where they can aquire these comics.
+* The site's flow is set up in such a way that there are no true dead ends. User can always get to another page
+* We were able to succesffully add a character profile list that dynamically populates information based off saved information, and gives a more in depth look at the character and various comics associated with that character.
 
 ## Code Overview 
 --To Be filled-- 
