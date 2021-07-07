@@ -35,3 +35,6 @@
 * [Nick Perez](LinkHere.com)
 * [Clarisse Bonang](LinkHere.com) 
 
+## Liscense
+MIT
+
