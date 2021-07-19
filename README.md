@@ -14,9 +14,6 @@
 * The site's flow is set up in such a way that there are no true dead ends. User can always get to another page
 * We were able to succesffully add a character profile list that dynamically populates information based off saved information, and gives a more in depth look at the character and various comics associated with that character.
 
-## Code Overview 
---To Be filled-- 
-
 ## Presentation 
 
 ![Google Docs Link](https://docs.google.com/presentation/d/1nCAJ6QO4Tp-6DutocUiyKWgete62Mz6UfvavuddtLmg/edit?usp=sharing)
